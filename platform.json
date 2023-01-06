@@ -1,0 +1,36 @@
+{
+  "name"        : "XC32",
+  "title"       : "PlatformIO - PIC32",
+  "description" : "Development Platform for Microchip PIC32",
+  "homepage"    : "https://github.com/Wiz-IO",
+  "license"     : "Apache-2.0",
+  "engines"     : { "platformio": "^5" },
+  "repository"  : {
+    "type" : "git",
+    "url"  : "https://github.com/Wiz-IO/XC32"
+  },
+  "version": "1.0.0",
+  "packageRepositories" : [ "http://dl.platformio.org/packages/manifest.json" ],
+  "frameworks": {
+      "Baremetal"  : {
+        "package"       : "framework-XC32",
+        "script"        : "builder/frameworks/build-baremetal.py",
+        "description"   : "Baremetal Microchip XC32",
+        "title"         : "Baremetal Microchip XC32"
+      },    
+      "Arduino": {
+        "package"       : "framework-XC32",
+        "script"        : "builder/frameworks/build-arduino.py",
+        "description"   : "Arduino Microchip XC32",
+        "title"         : "Arduino Microchip XC32"
+      }
+  },
+  "packages": {
+    "framework-XC32": {
+        "type"          : "framework",
+        "version"      : "1.0.0",
+        "Vversion"       : "https://github.com/Wiz-IO/framework-XC32"
+    }
+
+  }
+}
