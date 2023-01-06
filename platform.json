@@ -28,8 +28,8 @@
   "packages": {
     "framework-XC32": {
         "type"          : "framework",
-        "version"      : "1.0.0",
-        "Vversion"       : "https://github.com/Wiz-IO/framework-XC32"
+        "Nversion"      : "1.0.0",
+        "version"       : "https://github.com/Wiz-IO/framework-XC32"
     }
 
   }
