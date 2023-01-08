@@ -6,3 +6,21 @@ _( The project is a work in progress, there may be bugs... )_
 Framework source: https://github.com/Wiz-IO/framework-XC32
 
 ![pic32mz](https://raw.githubusercontent.com/Wiz-IO/LIB/master/microchip/Arduino-PIC32MZ.jpg)
+
+Framework source: https://github.com/Wiz-IO/framework-XC32
+
+## COMPILER<br>
+Platform use installed XC32 compiler<br>
+
+1. Install XC32 from the Microchip website
+
+<br>
+2. Uploader use "libusb-1.0.dll" https://github.com/libusb/libusb/releases <br>
+Put DLL in PlatformIO Python folder ( .platformio/penv/Scripts )<br>
+
+<br>
+3. Install Platform:<br>
+(VSCode) PlatformIO Home > Platforms > Advanced Installation: paste https://github.com/Wiz-IO/XC32
+
+
+TODO...
