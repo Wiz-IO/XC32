@@ -5,4 +5,4 @@ _( The project is a work in progress, there may be bugs... )_
 
 Framework source: https://github.com/Wiz-IO/framework-XC32
 
-[demo](https://raw.githubusercontent.com/Wiz-IO/LIB/master/microchip/Arduino-PIC32MZ.jpg)
+![pic32mz](https://raw.githubusercontent.com/Wiz-IO/LIB/master/microchip/Arduino-PIC32MZ.jpg)
