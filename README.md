@@ -16,7 +16,8 @@ Platform use installed XC32 compiler
 * Uploader use "libusb-1.0.dll" https://github.com/libusb/libusb/releases <br>
 Put DLL in PlatformIO Python folder ( .platformio/penv/Scripts )<br>
 * Install Platform:<br>
-(VSCode) PlatformIO Home > Platforms > Advanced Installation: paste https://github.com/Wiz-IO/XC32
+(VSCode) PlatformIO Home > Platforms<br>
+Advanced Installation: paste https://github.com/Wiz-IO/XC32
 
 
 TODO...
