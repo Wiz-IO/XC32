@@ -11,8 +11,8 @@ Framework source: https://github.com/Wiz-IO/framework-XC32
 The Platform use installed Microchip XC32 compiler
 <br>
 * Install XC32 from the Microchip website
-* Uploader use "libusb-1.0.dll" https://github.com/libusb/libusb/releases <br>
-Put DLL in PlatformIO Python folder ( .platformio/penv/Scripts )<br>
+* Uploader use "libusb-1.0" https://github.com/libusb/libusb/releases <br>
+Put DLL/LIB in PlatformIO Python folder ( .platformio/penv/Scripts )<br>
 * Install Platform:<br>
 (VSCode) PlatformIO Home > Platforms<br>
 Advanced Installation: paste https://github.com/Wiz-IO/XC32
