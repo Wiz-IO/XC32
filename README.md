@@ -19,3 +19,4 @@ Advanced Installation: paste https://github.com/Wiz-IO/XC32
 
 
 TODO...
+![curiosity](https://microchipdeveloper.com/local--files/boards-i:curiosity-pic32mz/PIC32MZ-CURIOSITY.png)
