@@ -1,5 +1,5 @@
 # Curiosity PIC32MZEF Development Board
 
-Uploader: PKOB-REALICE
+## Reverse Engineering of PIC32MZ Curiosity PKOB-REALICE
 
 ![pic32mz](https://microchipdeveloper.com/local--files/boards-i:curiosity-pic32mz/PIC32MZ-CURIOSITY.png)
