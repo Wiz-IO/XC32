@@ -1,5 +1,5 @@
 # Curiosity PIC32MZEF Development Board
 
-PKOB-REALICE
+Uploader: PKOB-REALICE
 
-https://microchipdeveloper.com/local--files/boards-i:curiosity-pic32mz/PIC32MZ-CURIOSITY.png
+![pic32mz](https://microchipdeveloper.com/local--files/boards-i:curiosity-pic32mz/PIC32MZ-CURIOSITY.png)
