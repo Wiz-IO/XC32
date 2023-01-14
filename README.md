@@ -18,5 +18,5 @@ Put DLL/LIB in PlatformIO Python folder ( .platformio/penv/Scripts )<br>
 Advanced Installation: paste https://github.com/Wiz-IO/XC32
 
 
-TODO...
+## TODO...
 ![curiosity](https://microchipdeveloper.com/local--files/boards-i:curiosity-pic32mz/PIC32MZ-CURIOSITY.png)
