@@ -1,8 +1,8 @@
 {
-  "name": "WizIO-PIC32MZ",
-  "url": "https://github.com/Wiz-IO/XC32",
-  "vendor": "Microchip",
-  "frameworks": [ "Baremetal", "Arduino" ],
+  "name"        : "Curiosity",
+  "url"         : "https://github.com/Wiz-IO/XC32",
+  "vendor"      : "Microchip Curiosity PIC32MZ EF v1.0",
+  "frameworks"  : [ "Baremetal", "Arduino" ],
 
   "build": {
     "category"  : "pic32mx",
@@ -15,7 +15,7 @@
   "debug": { },
 
   "upload": {
-    "protocol"          :      "GEN4",
+    "protocol"          : "curiosity",
     "maximum_ram_size"  :      131072,
     "maximum_size"      :     2097152
 
