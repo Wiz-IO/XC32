@@ -1,7 +1,7 @@
 # Copyright 2023 (c) WizIO ( Georgi Angelov )
 #   Reverse Engineering of PIC32MZ Curiosity PKOB
 #   Version:
-#       NOT READY !!!
+#       PlatformIO mod
 #
 #   Python depend:
 #       intelhex,
@@ -10,10 +10,15 @@
 
 import sys, struct, time, inspect
 from os.path import join, normpath, dirname
-import REALICE as RI
+
+IS_PLATFORMIO = False
+try:
+    import uploader.REALICE as RI
+    IS_PLATFORMIO = True
+except:
+    import REALICE as RI
 
 THIS_DIR = normpath( dirname(__file__) )
-
 END_POINT_SIZE = 64
 FILL = 0x5A5A
 
@@ -27,7 +32,7 @@ def ERROR(txt):
         import click
         click.secho( '[ERROR] %s' % txt, fg='red')
     except:
-        print( '[ERROR] %s in %s()' % (txt, inspect.stack()[1][3]) )
+        print( '[ERROR] %s : %s()' % (txt, inspect.stack()[1][3]) )
     print()
     time.sleep(.1)
     sys.exit(-1)
@@ -35,9 +40,9 @@ def ERROR(txt):
 def INFO(txt):
     try:
         import click 
-        click.secho( '\t%s' % (txt), fg='blue') # BUG: Windows: 4 same chars
+        click.secho( '   %s' % (txt), fg='blue') # BUG: Windows: 4 same chars
     except:
-        print( '\t%s' % (txt))
+        print( '   %s' % (txt))
 
 def DUMP(buf, txt=None, cnt=END_POINT_SIZE, mod=16, print_chars=False, max=True):
     return
@@ -65,7 +70,20 @@ try:
     import usb.util
     from intelhex import IntelHex
 except ImportError:
-    ERROR('Python dependency')
+    if IS_PLATFORMIO:
+        from platformio import proc
+        PYTHON_EXE = proc.get_pythonexe_path()
+        print('\nInstalling Python requirements...')
+        args = [ PYTHON_EXE, '-m', 'pip', '-q', 'install', '-r', 'requirements.txt' ]
+        result = proc.exec_command( args, stdout=sys.stdout, stderr=sys.stderr, stdin=sys.stdin, cwd=THIS_DIR )
+        print(result)
+        print('Requirements DONE')
+        print('Download and Put libusb-1.0.dll in PIO Python folder:', dirname(PYTHON_EXE), '\n') # TODO add libs
+        print('https://github.com/libusb/libusb/releases')
+        print('and click [ Upload ] again\n')
+        exit(0)      
+    else:
+        ERROR('Python dependency not found')
 
 ###############################################################################
 
@@ -78,7 +96,7 @@ class USBHID:
         except:
             ERROR('libusb-1.0.dll not found')
         if None == self.usb:
-            ERROR('USB Tool not connected')
+            ERROR('Curiosity Board not connected')
         usb.util.claim_interface(self.usb, 0)
         self.usb.reset()
 
@@ -362,7 +380,6 @@ class CURIOSITY:
     def end(self):
         FUNC()
         self.CMD_SETEMULATORPWR( RI.bitPOWER_STAY_ON | RI.bitEMULATOR_POWER, 26 )
-        print('Elapsed: %d seconds\n' % ( ( time.time() - self.start_time ) ) )
 
     def erase(self, mask=None):
         FUNC()
@@ -414,9 +431,9 @@ class CURIOSITY:
 
 ###############################################################################
 
-c = CURIOSITY( join(THIS_DIR, 'APPLICATION.hex') )
-INFO('Device ID: 0x%08X' % c.begin() )   
-if True:
+def upload(target, source, env):
+    c = CURIOSITY( join(env.get('BUILD_DIR'), env.get('PROGNAME')) + '.hex' )
+    INFO('Device ID: 0x%08X' % c.begin() ) 
     INFO('Programing...')
     n = c.program( RI.cregion_PgmMem )
     INFO('  Program Memory : %d' % n)
@@ -424,5 +441,21 @@ if True:
     INFO('  Boot Config    : %d' % n)
     n = c.program( RI.cregion_Cfgs )
     INFO('  Configuration  : %d' % n)
-    pass
-c.end()
+    c.end()
+    INFO('Elapsed %d seconds' % ( ( time.time() - c.start_time ) ) )
+
+###############################################################################
+
+if __name__ == "__main__":
+    c = CURIOSITY( join(THIS_DIR, 'APPLICATION.hex') ) # TEST FILE
+    INFO('Device ID: 0x%08X' % c.begin() )   
+    if True:
+        INFO('Programing...')
+        n = c.program( RI.cregion_PgmMem )
+        INFO('  Program Memory : %d' % n)
+        n = c.program( RI.cregion_BtCfg )
+        INFO('  Boot Config    : %d' % n)
+        n = c.program( RI.cregion_Cfgs )
+        INFO('  Configuration  : %d' % n)
+        pass
+    c.end()

@@ -185,3 +185,5 @@ RegionLowerBootAliasLastPage = 524288
 RegionAltBootMemoryLastPage = 4194304
 RegionBoot1MemoryLastPage = 1048576
 RegionBoot2MemoryLastPage = 2097152
+
+def beep(): print('REALICE')
