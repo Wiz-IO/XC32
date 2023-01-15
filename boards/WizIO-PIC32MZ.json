@@ -1,0 +1,23 @@
+{
+  "name": "WizIO-PIC32MZ",
+  "url": "https://github.com/Wiz-IO/XC32",
+  "vendor": "Microchip",
+  "frameworks": [ "Baremetal", "Arduino" ],
+
+  "build": {
+    "category"  : "pic32mx",
+    "mcu"       : "32MZ2048EFM100",
+    "core"      : "PIC32MZ",    
+    "variant"   : "WizIO-PIC32MZ",    
+    "f_cpu"     : "200000000ul"
+  },
+
+  "debug": { },
+
+  "upload": {
+    "protocol"          : "curiosity",
+    "maximum_ram_size"  :  524288,
+    "maximum_size"      : 2097152
+
+  }
+}
