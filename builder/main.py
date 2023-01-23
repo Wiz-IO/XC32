@@ -18,16 +18,16 @@ env.xc32_ver = float(x[1].replace('v',''))
 
 env.Replace( 
     BUILD_DIR = env.subst('$BUILD_DIR'),
-    ARFLAGS = ['rc'],        
-    AR      = 'xc32-ar',
-    AS      = 'xc32-as',
-    CC      = 'xc32-gcc',
-    CXX     = 'xc32-g++',
-    #LINK    = 'xc32-ld',   
-    RANLIB  = 'xc32-ranlib',
-    OBJCOPY = 'xc32-objdump', 
-    ELFHEX  = 'xc32-bin2hex',
-    PROGSUFFIX='.elf',   
+    ARFLAGS     = ['rc'],        
+    AR          = 'xc32-ar',
+    AS          = 'xc32-as',
+    CC          = 'xc32-gcc',
+    CXX         = 'xc32-g++', 
+    RANLIB      = 'xc32-ranlib',
+    OBJCOPY     = 'xc32-objdump', 
+    ELFHEX      = 'xc32-bin2hex',
+    SIZETOOL    = 'xc32-size',
+    PROGSUFFIX  = '.elf',   
 )
 
 prg = None
