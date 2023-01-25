@@ -16,10 +16,13 @@ env.xc32_ver = 2.10
 x = env.xc32_dir.replace('/','').replace('\\','').split('xc32')
 env.xc32_ver = float(x[1].replace('v',''))
 
+
+
 env.Replace( 
-    BUILD_DIR = env.subst('$BUILD_DIR'),
+    BUILD_DIR   = env.subst("$BUILD_DIR"),
     ARFLAGS     = ['rc'],        
     AR          = 'xc32-ar',
+    ARCOM       = '$AR $ARFLAGS $TARGET.posix ${_long_sources_hook(__env__, SOURCES)}',
     AS          = 'xc32-as',
     CC          = 'xc32-gcc',
     CXX         = 'xc32-g++', 
