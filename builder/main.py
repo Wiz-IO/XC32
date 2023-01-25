@@ -16,8 +16,6 @@ env.xc32_ver = 2.10
 x = env.xc32_dir.replace('/','').replace('\\','').split('xc32')
 env.xc32_ver = float(x[1].replace('v',''))
 
-
-
 env.Replace( 
     BUILD_DIR   = env.subst("$BUILD_DIR"),
     ARFLAGS     = ['rc'],        
