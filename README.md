@@ -8,7 +8,7 @@ _( The project is a work in progress, there may be bugs... )_
 Framework source: https://github.com/Wiz-IO/framework-XC32
 
 ## Compiler<br>
-The Platform use installed Microchip XC32 compiler ( must work on Win/Lin/Mac )
+The Platform use installed Microchip XC32 compiler ( must work on Windows / Linux / Mac )
 <br>
 * Install XC32 from the Microchip website
 * Uploader use **libusb-1.0** https://github.com/libusb/libusb/releases <br>
