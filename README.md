@@ -21,11 +21,11 @@ Advanced Installation: paste https://github.com/Wiz-IO/XC32
 * Arduino API
 * Digital[] & EINT[]
 * Analog[] - ADC & PWM
-* HardwareSerials [6]
-* SoftwareSerial [4]
-* USBSerial [1]
-* SPI[all]
-* I2C[all] / Wire
+* HardwareSerials [ all ]
+* SoftwareSerial [ 4 ]
+* USBSerial [ 1 ]
+* SPI [ all ]
+* I2C [ all ] / Wire
 * SoftTimers
 * fatfs, freeRTOS, tinyusb, lvgl, SD, LCD/TFT...
 * TODO...
