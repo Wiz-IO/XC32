@@ -38,8 +38,8 @@ Advanced Installation: paste https://github.com/Wiz-IO/XC32
 * TODO ... CAN, Ethernet, lwip, mbedtls ... etc
 
 ## Uploader
-* Curiosity PKOB ( integrated )
 * ICD 4 / Snap ( integrated, very fast )
+* Curiosity PKOB ( integrated )
 * "Plan B" - use MPLAB X IPE
 
 ## Debugger
