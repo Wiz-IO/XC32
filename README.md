@@ -19,7 +19,7 @@ Advanced Installation: paste https://github.com/Wiz-IO/XC32
 
 ## Boards
 * Curiosity v1
-* Looking for hardware cooperation
+* **Looking for Hardware cooperation**
 
 ## Baremetal
 * XC32 - NO Harmony !!!
