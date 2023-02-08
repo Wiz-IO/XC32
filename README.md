@@ -39,7 +39,7 @@ Advanced Installation: paste https://github.com/Wiz-IO/XC32
 
 ## Uploader
 * Curiosity PKOB ( integrated )
-* ICD 4 / Snap ( integrated )
+* ICD 4 / Snap ( integrated, very fast )
 * "Plan B" - use MPLAB X IPE
 
 ## Debugger
