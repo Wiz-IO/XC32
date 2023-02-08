@@ -30,6 +30,16 @@ Advanced Installation: paste https://github.com/Wiz-IO/XC32
 * fatfs, freeRTOS, tinyusb, lvgl, SD, LCD/TFT
 * TODO...
 
+## Uploader
+* Curiosity PKOB ( integrated )
+* ICD 4 / Snap ( integrated )
+* "Plan B" - use MPLAB X IPE
+
+## Debugger
+* printf
+* ICD/JTAG - Challenge, but in some other life...
+
+
 ## TODO...
 [![DEMO](https://img.youtube.com/vi/salZwXYZfkg/0.jpg)](https://www.youtube.com/watch?v=salZwXYZfkg "DEMO")
 ![curiosity](https://microchipdeveloper.com/local--files/boards-i:curiosity-pic32mz/PIC32MZ-CURIOSITY.png)
