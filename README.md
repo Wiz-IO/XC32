@@ -35,7 +35,7 @@ Advanced Installation: paste https://github.com/Wiz-IO/XC32
 * I2C [ all ] / Wire
 * SoftTimers
 * fatfs, freeRTOS, tinyusb, lvgl, SD, LCD/TFT
-* TODO...
+* TODO ... CAN, Ethernet, lwip, mbedtls ... etc
 
 ## Uploader
 * Curiosity PKOB ( integrated )
