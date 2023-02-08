@@ -17,6 +17,20 @@ Put DLL/LIB in PlatformIO Python folder ( .platformio/penv/Scripts )<br>
 (VSCode) PlatformIO Home > Platforms<br>
 Advanced Installation: paste https://github.com/Wiz-IO/XC32
 
+## Arduino
+* Arduino API
+* Digital ( Pins )
+* ADC
+* PWM
+* EINT
+* HardwareSerials [6]
+* SoftwareSerial [4]
+* USBSerial [1]
+* SPI
+* I2C / Wire
+* SoftTimers
+* fatfs, freeRTOS, tinyusb, lvgl, SD, LCD/TFT...
+* TODO...
 
 ## TODO...
 [![DEMO](https://img.youtube.com/vi/salZwXYZfkg/0.jpg)](https://www.youtube.com/watch?v=salZwXYZfkg "DEMO")
