@@ -112,6 +112,7 @@ def dev_init_compiler(env, Template=None):
         LIBPATH = [
             join(env.xc32_dir, env.category, 'lib', 'proc', env.mcu),
             join('$PROJECT_DIR', 'lib'),
+            join(env.framework_dir, 'lib'),
         ],
         LIBS = [ 'm', 'c' ], # 'lega-c'
         LINKFLAGS = [
@@ -140,6 +141,7 @@ def dev_init_compiler(env, Template=None):
     add_tinyusb(env)
     add_lvgl(env)
     add_fatfs(env)
+    add_lwip(env)
 
 ###############################################################################
 
@@ -226,3 +228,20 @@ def add_fatfs(env):
                 LIBS       = env.BuildLibrary( OBJ_DIR, SRC_DIR )
             )
             break                  
+
+def add_lwip(env):
+    OBJ_DIR = join( '$BUILD_DIR', 'lwip' )
+    SRC_DIR = join( env.framework_dir, 'libraries', 'lwip', 'src')
+    if 'LWIP' in env.get('CPPDEFINES'):
+        INFO("\t:LWIP")
+        env.Append( 
+            CPPDEFINES = [ '' ], 
+            CPPPATH    = [ 
+                join(SRC_DIR, 'include'), 
+                join(SRC_DIR, 'port'), 
+            ],
+            LIBS       = env.BuildLibrary( OBJ_DIR, SRC_DIR, src_filter = [ 
+                '-<*>', 
+                '+<core>', 
+            ] )
+        )        
