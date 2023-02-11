@@ -1,6 +1,9 @@
 '''
 Copyright 2023 WizIO ( Georgi Angelov )
 '''
+# Copyright 2023 WizIO ( Georgi Angelov )
+
+# custom_module = %MODULES/common/md-tinyusb [ HOST(optional) SRC(optional) ]
 
 from os.path import join, exists
 from shutil import copyfile

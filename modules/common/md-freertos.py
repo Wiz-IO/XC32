@@ -1,6 +1,6 @@
-'''
-Copyright 2023 WizIO ( Georgi Angelov )
-'''
+# Copyright 2023 WizIO ( Georgi Angelov )
+
+# custom_module = %MODULES/common/md-freertos [ SRC(optional) ]
 
 from os.path import join, exists
 from shutil import copyfile
@@ -13,7 +13,7 @@ def init(env, params=''):
     PRJ_DIR = join( env.subst('$PROJECT_DIR'), 'include' )
     if not exists( join(PRJ_DIR, 'FreeRTOSConfig.h') ): 
         copyfile(
-            join(env.framework_dir, 'libraries', 'freertos', 'FreeRTOSConfig'), # basic config
+            join(env.framework_dir, 'libraries', 'freertos', 'FreeRTOSConfig'),
             join(PRJ_DIR, 'FreeRTOSConfig.h')
         )
 

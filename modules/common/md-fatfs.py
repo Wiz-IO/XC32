@@ -1,6 +1,6 @@
-'''
-Copyright 2023 WizIO ( Georgi Angelov )
-'''
+# Copyright 2023 WizIO ( Georgi Angelov )
+
+# custom_module = %MODULES/common/md-fatfs [ SRC(optional) ]
 
 from os.path import join, exists
 from shutil import copyfile
@@ -18,7 +18,7 @@ def init(env, params=''):
         ) 
 
     env.Append(
-        CPPDEFINES = [ 'FATFS' ],
+        CPPDEFINES = [ 'FTFS' ], # FATFS is typedef
         CPPPATH    = [ join(SRC_DIR) ],
     )
 
