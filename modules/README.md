@@ -2,6 +2,15 @@
 
 Adds uncompiled framework source codes ( existing ones, third-party )
 
+<br>Project INI:
+```ini
+custom_module = 
+    PATH/md-name.py
+    PATH/FOLDER
+    md-freertos.py
+    md-lwip.py
+```
+
 <br>Module script:
 ```py
 from modules import PRINT_MODULE_INFO, dev_module_load
@@ -26,15 +35,6 @@ def init(env, params=''):
     PRINT_MODULE_INFO('MODULE NAME')
 
 ## End ########################################################################
-```
-
-<br>Project INI:
-```ini
-custom_module = 
-    PATH/md-name.py
-    PATH/FOLDER
-    md-freertos.py
-    md-lwip.py
 ```
 
 <br>LOG:
