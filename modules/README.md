@@ -2,7 +2,7 @@
 
 Adds uncompiled framework source codes ( existing ones, third-party )
 
-<br>Project INI:
+<br>**Project INI**
 ```ini
 custom_module = 
     PATH/md-name.py                 ; stand alone, module name must begin with 'md-'
@@ -18,7 +18,7 @@ custom_module =
 ; by default, predefined modules are compiled as static libraries
 ```
 
-<br>Basic module script ( it's actually a normal Python script for PlatformIO support )
+<br>**Basic module script** ( it's actually a normal Python script for PlatformIO support )
 ```py
 from modules import PRINT_MODULE_INFO, dev_module_load
 
