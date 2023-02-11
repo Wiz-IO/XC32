@@ -34,7 +34,7 @@ def init(env, params=''):
 
     if 'SRC' in params.upper():
         env.BuildSources( OBJ_DIR, SRC_DIR, src_filter = filter ) 
+        PRINT_MODULE_INFO('FREERTOS (src)')
     else:
         env.Append( LIBS = env.BuildLibrary( OBJ_DIR, SRC_DIR, src_filter = filter ) )
-
-    PRINT_MODULE_INFO('FREERTOS')
+        PRINT_MODULE_INFO('FREERTOS (lib)')

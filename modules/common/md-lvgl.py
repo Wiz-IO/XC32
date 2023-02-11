@@ -29,7 +29,7 @@ def init(env, params=''):
 
     if 'SRC' in params.upper():
         env.BuildSources( OBJ_DIR, SRC_DIR, src_filter = filter ) 
+        PRINT_MODULE_INFO('LVGL (src)')
     else:
         env.Append( LIBS = env.BuildLibrary( OBJ_DIR, SRC_DIR, src_filter = filter ) )
-
-    PRINT_MODULE_INFO('LVGL')
+        PRINT_MODULE_INFO('LVGL (lib)')

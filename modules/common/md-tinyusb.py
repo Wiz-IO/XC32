@@ -25,14 +25,16 @@ def init(env, params=''):
         CPPPATH    = [ SRC_DIR ]  
     )
 
+    mode = 'DEVICE'
     if 'HOST' in params.upper():    
         filter =  [ '+<*>', '-<device>', '+<class>' ]
-        PRINT_MODULE_INFO('TINYUSB HOST')
+        mode = 'HOST'
     else:       
         filter = [ '+<*>', '-<host>', '+<class>' ]
-        PRINT_MODULE_INFO('TINYUSB DEVICE')
 
     if 'SRC' in params.upper(): 
         env.BuildSources( OBJ_DIR, SRC_DIR, src_filter = filter )   
+        PRINT_MODULE_INFO('TINYUSB %s (src)' % mode)
     else: 
-        env.Append( LIBS = env.BuildLibrary( OBJ_DIR, SRC_DIR, src_filter = filter ) )     
+        env.Append( LIBS = env.BuildLibrary( OBJ_DIR, SRC_DIR, src_filter = filter ) )   
+        PRINT_MODULE_INFO('TINYUSB %s (lib)' % mode)  
