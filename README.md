@@ -48,7 +48,7 @@ custom_xc32 = PATH/Microchip/xc32/vX.XX ; change compiller path
 * "Plan B" - use MPLAB X IPE
 
 ## Debugger
-* printf
+* stdio printf() or Serial.printf()
 * ICD/JTAG - Challenge, but in some other life...
 
 
