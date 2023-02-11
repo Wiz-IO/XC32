@@ -21,7 +21,7 @@ def init(env, params=''):
     
     # env.BuildSources( OBJ_DIR, SRC_DIR, src_filter = [] ) ### COMPILE AS OBJECTS
 
-    # dev_module_load(env, '$MODULES/md-xxx.py') # load other module
+    # dev_module_load(env, '$MODULES/md-xxx.py') ### load other module
     
     PRINT_MODULE_INFO('MODULE TEMPLATE')
 
