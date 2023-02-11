@@ -5,7 +5,7 @@ from os import listdir
 from shutil import copyfile
 from SCons.Script import Builder
 from wiz import INFO, FRAMEWORK_NAME
-from modules import dev_init_modules, dev_module_load
+from modules import dev_init_modules
 import uploader
 
 def dev_uploader(target, source, env):
@@ -140,86 +140,4 @@ def dev_init_compiler(env, Template=None):
 
     dev_init_modules(env)
 
-    add_tinyusb(env)    # TODO as modile
-    add_lvgl(env)       # TODO as modile
-    add_fatfs(env)      # TODO as modile
-    add_lwip(env)       # TODO as modile
-
 ###############################################################################
-
-def add_tinyusb(env):
-    OBJ_DIR = join( '$BUILD_DIR', 'tyusb' )
-    SRC_DIR = join( env.framework_dir, 'libraries', 'tinyusb', 'src' )
-    for define in env.get('CPPDEFINES'):
-        if '\t:TINYUSB' in define:
-            INFO("TINYUSB")
-            dir = join( env.subst('$PROJECT_DIR'), 'include' )
-            if not exists( join(dir, 'tusb_config.h') ):
-                copyfile( 
-                    join(env.framework_dir, 'libraries', 'tinyusb', 'tusb_config'), 
-                    join(dir, 'tusb_config.h') ) 
-            env.Append(          
-                CPPDEFINES = [ 'CFG_TUSB_MCU=OPT_MCU_PIC32MZ', 'CFG_TUSB_OS=OPT_OS_NONE' ], 
-                CPPPATH    = [ SRC_DIR ]  
-            )
-            if 'TINYUSB_HOST' in define:     
-                print('   TINYUSB : HOST')
-                env.BuildSources( OBJ_DIR, SRC_DIR, src_filter = [ '+<*>', '-<device>', '+<class>' ] )
-            else:     
-                print('   TINYUSB : DEVICE')        
-                env.BuildSources( OBJ_DIR, SRC_DIR, src_filter = [ '+<*>', '-<host>', '+<class>' ] )    
-        break        
-    
-def add_lvgl(env):
-    OBJ_DIR = join( '$BUILD_DIR', 'lvgl' )
-    SRC_DIR = join( env.framework_dir, 'libraries', 'lvgl', 'src' )
-    if 'LVGL' in env.get('CPPDEFINES'):
-        INFO("\t:LVGL")
-        env.Append( 
-            CPPDEFINES = [ 'LV_CONF_INCLUDE_SIMPLE' ], 
-            CPPPATH    = [ SRC_DIR ],
-            LIBS       = env.BuildLibrary( OBJ_DIR, SRC_DIR, src_filter = [ 
-                '+<*>', 
-                '-<draw/arm2d>', 
-                '-<draw/gd32_ipa>',
-                '-<draw/nxp>',
-                '-<draw/sdl>',
-                '-<draw/stm32_dma2d>',
-                '-<draw/swm341_dma2d>',
-            ] )
-        )
-
-def add_fatfs(env):
-    OBJ_DIR = join( '$BUILD_DIR', 'fatfs' )
-    SRC_DIR = join( env.framework_dir, 'libraries', 'fatfs')
-    for define in env.get('CPPDEFINES'):
-        if 'FAT_FS' in define:
-            INFO("\t: FATFS")
-            dir = join( env.subst('$PROJECT_DIR'), 'include' )
-            if not exists( join(dir, 'ffconf.h') ):
-                copyfile( 
-                    join(env.framework_dir, 'libraries', 'fatfs', 'ffconf'), 
-                    join(dir, 'ffconf.h') )            
-            env.Append( 
-                CPPDEFINES = [], 
-                CPPPATH    = [ join(SRC_DIR) ],
-                LIBS       = env.BuildLibrary( OBJ_DIR, SRC_DIR )
-            )
-            break                  
-
-def add_lwip(env):
-    OBJ_DIR = join( '$BUILD_DIR', 'lwip' )
-    SRC_DIR = join( env.framework_dir, 'libraries', 'lwip', 'src')
-    if 'LWIP' in env.get('CPPDEFINES'):
-        INFO("\t:LWIP")
-        env.Append( 
-            CPPDEFINES = [ '' ], 
-            CPPPATH    = [ 
-                join(SRC_DIR, 'include'), 
-                join(SRC_DIR, 'port'), 
-            ],
-            LIBS       = env.BuildLibrary( OBJ_DIR, SRC_DIR, src_filter = [ 
-                '-<*>', 
-                '+<core>', 
-            ] )
-        )        
