@@ -15,7 +15,7 @@ custom_module =
     md-lwip.py                      ; platform ( Arduino / Baremetal ) predefined
     md-xyz.py 1 2 3                 ; support params, separated by a space
     
-; by default, predefined modules are compiled as static libraries, parameter SRC mean: compile and link as object
+; by default, predefined modules are compiled as static libraries
 ```
 
 <br>Module script:
