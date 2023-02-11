@@ -1,6 +1,6 @@
 # Basic modules template
 
-Adds uncompiled framework source codes ( existing ones third-party )
+Adds uncompiled framework source codes ( existing ones, third-party )
 
 <br>Module script:
 ```py
