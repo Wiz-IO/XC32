@@ -39,7 +39,6 @@ custom_module =
 
 <br>LOG:
 ```
-
 PLATFORM: PlatformIO - PIC32 (1.0.0) > WizIO-PIC32MZ
 HARDWARE: 32MZ2048EFM100 200MHz, 512KB RAM, 2MB Flash
 PACKAGES:
@@ -53,9 +52,8 @@ PACKAGES:
    PROJECT MODULES <---------
           : FREERTOS
           : LWIP
-...          
+      
 RAM:   [          ]   1.6% (used 8356 bytes from 524288 bytes)
 Flash: [=         ]   6.3% (used 132352 bytes from 2097152 bytes)
 ====================== [SUCCESS] Took 1.52 seconds =================
-
 ```
