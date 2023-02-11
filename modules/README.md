@@ -13,7 +13,7 @@ custom_module =
     $MODULES/Baremetal/md-name.py   ; predefined
     md-freertos.py                  ; platform ( Arduino / Baremetal ) predefined
     md-lwip.py                      ; platform ( Arduino / Baremetal ) predefined
-    md-xyz.py 1 2 3                 ; support params, separated by a space
+    md-tinyusb.py HOST              ; support params, separated by a space
     
 ; by default, predefined modules are compiled as static libraries
 ```
