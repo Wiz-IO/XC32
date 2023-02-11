@@ -1,6 +1,7 @@
 # Copyright 2023 (c) WizIO ( Georgi Angelov )
 
 import os, hashlib
+from os.path import join, isabs, exists, isdir, basename
 from wiz import INFO, ERROR
 from importlib.machinery import SourceFileLoader
 
@@ -16,7 +17,7 @@ def dev_module_load(env, module_path, params=None):
 
 def dev_init_modules(env):
     env.modules = []
-    env['MODULES'] = env.modules_dir = os.path.join( env.platform_dir, 'modules')
+    env['MODULES'] = env.modules_dir = join( env.platform_dir, 'modules')
     lines = env.GetProjectOption('custom_module', None) # INIDOC
     if lines:
         INFO('PROJECT MODULES')
@@ -29,24 +30,24 @@ def dev_init_modules(env):
             params = ''
             if delim in line:
                 params = line[ line.index( delim ) + 1 : ].strip()
-                params = ' '.os.path.join( params.split() )
+                params = ' '.join( params.split() )
                 line = line.partition( delim )[0].strip()
             module_path = env.subst( line ).strip()
 
-            if False == os.path.isabs( module_path ):
-                module_path = env.subst( os.path.join( '$MODULES', env['PIOFRAMEWORK'][0], module_path ) ) 
+            if False == isabs( module_path ):
+                module_path = env.subst( join( '$MODULES', env['PIOFRAMEWORK'][0], module_path ) ) 
 
-            if False == os.path.exists( module_path ):
+            if False == exists( module_path ):
                 ERROR('[MODULE] File not found: %s' % module_path)
 
-            if True == os.path.isdir( module_path ):
+            if True == isdir( module_path ):
                 for root, dirs, files in os.walk( module_path ):
                     files = [ f for f in files if f.endswith('.py') ] 
                     for file in files:
-                        if not os.path.basename( file ).startswith('md-'): 
+                        if not basename( file ).startswith('md-'): 
                             continue 
-                        dev_module_load(env, os.path.join(root, file), params)
+                        dev_module_load(env, join(root, file), params)
             else:
-                if not os.path.basename( module_path ).startswith('md-'):
-                    ERROR('[MODULE] Unknown file: <%s> Must begin with "md-"' % os.path.basename(module_path))
+                if not basename( module_path ).startswith('md-'):
+                    ERROR('[MODULE] Unknown file: <%s> Must begin with "md-"' % basename(module_path))
                 dev_module_load(env, module_path, params)
