@@ -2,7 +2,7 @@
 
 Adds uncompiled framework source codes
 
-Module script
+<br>Module script:
 ```py
 from modules import PRINT_MODULE_INFO
 
@@ -26,7 +26,7 @@ def init(env, params=''):
 ## End ########################################################################
 ```
 
-Project INI
+<br>Project INI:
 ```ini
 custom_module = 
     PATH/md-name.py
