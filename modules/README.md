@@ -5,7 +5,7 @@ Adds uncompiled framework source codes ( existing ones, third-party )
 <br>Project INI:
 ```ini
 custom_module = 
-    PATH/md-name.py     ; stand alone
+    PATH/md-name.py     ; stand alone, module name must begin with 'md-'
     PATH/FOLDER         ; bulk folder
     $PROJECT_DIR/PATH   ; userware
     $MODULES/md-name.py ; platform pre-defined
