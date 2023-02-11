@@ -17,6 +17,10 @@ Put DLL/LIB in PlatformIO Python folder ( .platformio/penv/Scripts )<br>
 (VSCode) PlatformIO Home > Platforms<br>
 Advanced Installation: paste https://github.com/Wiz-IO/XC32
 
+```ini
+custom_xc32 = PATH/Microchip/xc32/vX.XX ; change compiller path
+```
+
 ## Boards
 * Curiosity v1
 * **Looking for Hardware cooperation**
