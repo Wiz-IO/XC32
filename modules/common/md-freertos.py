@@ -23,12 +23,18 @@ def init(env, params=''):
             join(SRC_DIR, 'include'),
             join(SRC_DIR, 'portable', 'MPLAB', 'PIC32MZ'),
         ],
-        LIBS = env.BuildLibrary( OBJ_DIR, SRC_DIR, src_filter = [
-            '+<*>',
-            '-<portable/Common>',
-            '-<portable/MemMang>',
-            '+<portable/MemMang/heap_4.c>',
-        ])
     )
+
+    filter = [
+        '+<*>',
+        '-<portable/Common>',
+        '-<portable/MemMang>',
+        '+<portable/MemMang/heap_4.c>',
+    ]
+
+    if 'SRC' in params.upper():
+        env.BuildSources( OBJ_DIR, SRC_DIR, src_filter = filter ) 
+    else:
+        env.Append( LIBS = env.BuildLibrary( OBJ_DIR, SRC_DIR, src_filter = filter ) )
 
     PRINT_MODULE_INFO('FREERTOS')

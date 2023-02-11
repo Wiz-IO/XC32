@@ -6,11 +6,13 @@ from os.path import join, exists
 from shutil import copyfile
 from modules import PRINT_MODULE_INFO
 
-def init(env, params=''):
-    OBJ_DIR = join( '$BUILD_DIR', 'modules', 'freertos' )
-    SRC_DIR = join( env.framework_dir, 'libraries', 'freertos')
+# TODO
 
-    # PRJ_DIR = join( env.subst('$PROJECT_DIR'), 'include' )
+def init(env, params=''):
+    OBJ_DIR = join( '$BUILD_DIR', 'modules', 'lwip' )
+    SRC_DIR = join( env.framework_dir, 'libraries', 'lwip')
+
+    PRJ_DIR = join( env.subst('$PROJECT_DIR'), 'include' )
     # if not exists( join(PRJ_DIR, '.h') ): copyfile()
 
     env.Append(
@@ -18,11 +20,17 @@ def init(env, params=''):
         CPPPATH = [ 
             join(SRC_DIR, 'include'), 
             join(SRC_DIR, 'port'), 
-        ],
-        LIBS = env.BuildLibrary( OBJ_DIR, SRC_DIR, src_filter = [ 
-                '-<*>', 
-                '+<core>', 
-        ] )
+        ]
     )
+
+    filter = [
+        '-<*>', 
+        '+<core>',         
+    ]
+
+    if 'SRC' in params.upper():
+        env.BuildSources( OBJ_DIR, SRC_DIR, src_filter = filter ) 
+    else:
+        env.Append( LIBS = env.BuildLibrary( OBJ_DIR, SRC_DIR, src_filter = filter ) )
 
     PRINT_MODULE_INFO('LWIP')
