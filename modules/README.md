@@ -8,10 +8,12 @@ custom_module =
     PATH/md-name.py     ; stand alone, module name must begin with 'md-'
     PATH/FOLDER         ; bulk folder
     $PROJECT_DIR/PATH   ; userware
-    $MODULES/common/md-name.py  ; pre-defined
-    md-freertos.py              ; platform pre-defined
-    md-lwip.py                  ; platform pre-defined
-    md-xyz.py 1 2 3             ; support params, separated by a space
+    $MODULES/common/md-name.py      ; pre-defined ( common )
+    $MODULES/Arduino/md-name.py     ; pre-defined
+    $MODULES/Baremetal/md-name.py   ; pre-defined
+    md-freertos.py                  ; platform ( Arduino / Baremetal ) pre-defined
+    md-lwip.py                      ; platform ( Arduino / Baremetal ) pre-defined
+    md-xyz.py 1 2 3                 ; support params, separated by a space
 ```
 
 <br>Module script:
