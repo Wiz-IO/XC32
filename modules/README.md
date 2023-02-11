@@ -32,4 +32,5 @@ custom_module =
     PATH/md-name.py
     PATH/FOLDER
     md-freertos.py
+    md-lwip.py
 ```
