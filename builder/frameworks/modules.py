@@ -16,7 +16,7 @@ def dev_module_load(env, module_path, params=None):
 
 def dev_init_modules(env):
     env.modules = []
-    env['MODULES'] = env.modules_dir = os.path.join( env.platform_dir, 'modules', env['PIOFRAMEWORK'][0])
+    env['MODULES'] = env.modules_dir = os.path.join( env.platform_dir, 'modules')
     lines = env.GetProjectOption('custom_module', None) # INIDOC
     if lines:
         INFO('PROJECT MODULES')
@@ -34,7 +34,7 @@ def dev_init_modules(env):
             module_path = env.subst( line ).strip()
 
             if False == os.path.isabs( module_path ):
-                module_path = env.subst( os.path.join( '$MODULES', module_path ) ) 
+                module_path = env.subst( os.path.join( '$MODULES', env['PIOFRAMEWORK'][0], module_path ) ) 
 
             if False == os.path.exists( module_path ):
                 ERROR('[MODULE] File not found: %s' % module_path)
