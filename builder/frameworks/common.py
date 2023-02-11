@@ -5,6 +5,7 @@ from os import listdir
 from shutil import copyfile
 from SCons.Script import Builder
 from wiz import INFO, FRAMEWORK_NAME
+from modules import dev_init_modules, dev_module_load
 import uploader
 
 def dev_uploader(target, source, env):
@@ -137,11 +138,12 @@ def dev_init_compiler(env, Template=None):
         UPLOADCMD = dev_uploader,
     )
 
-    add_freertos(env)
-    add_tinyusb(env)
-    add_lvgl(env)
-    add_fatfs(env)
-    add_lwip(env)
+    dev_init_modules(env)
+
+    add_tinyusb(env)    # TODO as modile
+    add_lvgl(env)       # TODO as modile
+    add_fatfs(env)      # TODO as modile
+    add_lwip(env)       # TODO as modile
 
 ###############################################################################
 
@@ -186,30 +188,6 @@ def add_lvgl(env):
                 '-<draw/swm341_dma2d>',
             ] )
         )
-
-def add_freertos(env):
-    OBJ_DIR = join( '$BUILD_DIR', 'freertos' )
-    SRC_DIR = join( env.framework_dir, 'libraries', 'freertos')
-    if 'FREERTOS' in env.get('CPPDEFINES'):
-        INFO("\t:FREERTOS")
-        dir = join( env.subst('$PROJECT_DIR'), 'include' )
-        if not exists( join(dir, 'FreeRTOSConfig.h') ):
-            copyfile( 
-                join(env.framework_dir, 'libraries', 'freertos', 'FreeRTOSConfig'), 
-                join(dir, 'FreeRTOSConfig.h') )         
-        env.Append( 
-            CPPDEFINES = [], 
-            CPPPATH    = [ 
-                join(SRC_DIR, 'include'), 
-                join(SRC_DIR, 'portable', 'MPLAB', 'PIC32MZ'), 
-            ],
-            LIBS       = env.BuildLibrary( OBJ_DIR, SRC_DIR, src_filter = [ 
-                '+<*>', 
-                '-<portable/Common>',
-                '-<portable/MemMang>',
-                '+<portable/MemMang/heap_4.c>',
-            ] )
-        )        
 
 def add_fatfs(env):
     OBJ_DIR = join( '$BUILD_DIR', 'fatfs' )

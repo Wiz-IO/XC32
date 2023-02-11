@@ -5,7 +5,7 @@ from wiz import INFO, ERROR
 from importlib.machinery import SourceFileLoader
 
 def PRINT_MODULE_INFO(txt): 
-    INFO('\t%s' % txt)
+    INFO('\t  : %s' % txt)
 
 def dev_module_load(env, module_path, params=None):
     module_path = env.subst( module_path )
@@ -17,7 +17,7 @@ def dev_module_load(env, module_path, params=None):
 def dev_init_modules(env):
     env.modules = []
     env['MODULES'] = env.modules_dir = os.path.join( env.platform_dir, 'modules', env['PIOFRAMEWORK'][0])
-    lines = env.GetProjectOption('custom_modules', None) # INIDOC
+    lines = env.GetProjectOption('custom_module', None) # INIDOC
     if lines:
         INFO('PROJECT MODULES')
         for line in lines.split('\n'):
@@ -43,10 +43,10 @@ def dev_init_modules(env):
                 for root, dirs, files in os.walk( module_path ):
                     files = [ f for f in files if f.endswith('.py') ] 
                     for file in files:
-                        if not os.path.basename( file ).startswith('module-'): 
+                        if not os.path.basename( file ).startswith('md-'): 
                             continue 
                         dev_module_load(env, os.path.join(root, file), params)
             else:
-                if not os.path.basename( module_path ).startswith('module-'):
-                    ERROR('[MODULE] Unknown file: <%s> Must begin with "module-"' % os.path.basename(module_path))
+                if not os.path.basename( module_path ).startswith('md-'):
+                    ERROR('[MODULE] Unknown file: <%s> Must begin with "md-"' % os.path.basename(module_path))
                 dev_module_load(env, module_path, params)
