@@ -23,7 +23,7 @@ custom_xc32 = PATH/Microchip/xc32/vX.XX ; change compiller path
 ```
 
 ## Boards
-* Curiosity v1
+* Curiosity v1.0
 * **Looking for Hardware cooperation**
 
 ## Baremetal
