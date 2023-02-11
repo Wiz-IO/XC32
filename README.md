@@ -38,6 +38,7 @@ custom_xc32 = PATH/Microchip/xc32/vX.XX ; change compiller path
 * USBSerial [ 1 ]
 * SPI [ all ]
 * I2C [ all ] / Wire
+* etc
 * TODO ... CAN, Ethernet, lwip, mbedtls ... etc
 
 ## Uploader
