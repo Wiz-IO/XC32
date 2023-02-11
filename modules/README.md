@@ -11,6 +11,7 @@ custom_module =
     $MODULES/md-name.py ; platform pre-defined
     md-freertos.py      ; platform pre-defined
     md-lwip.py          ; platform pre-defined
+    md-xyz.py 1 2 3     ; support params, separated by a space
 ```
 
 <br>Module script:
