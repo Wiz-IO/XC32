@@ -18,13 +18,11 @@ custom_module =
 ; by default, predefined modules are compiled as static libraries
 ```
 
-<br>Module script:
+<br>Basic module script:
 ```py
 from modules import PRINT_MODULE_INFO, dev_module_load
 
-## Execute Function ###########################################################
-
-def init(env, params=''):
+def init(env, params=''): # entry point
 
     OBJ_DIR = join( '$BUILD_DIR', 'modules', ... 'MODULE NAME' )
     SRC_DIR = join( env.framework_dir, ... 'SOURCE PATH')
@@ -41,7 +39,6 @@ def init(env, params=''):
     
     PRINT_MODULE_INFO('MODULE NAME')
 
-## End ########################################################################
 ```
 
 <br>LOG:
