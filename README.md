@@ -41,12 +41,12 @@ custom_xc32 = PATH/Microchip/xc32/vX.XX ; change compiller path
 * etc
 * TODO ... CAN, Ethernet, lwip, mbedtls ... etc
 
-## Uploader
+## Upload
 * ICD 4 / Snap ( integrated, very fast )
 * Curiosity PKOB ( integrated )
 * "Plan B" - use MPLAB X IPE
 
-## Debugger
+## Debug
 * stdio printf() or Serial.printf()
 * ICD/JTAG - Challenge, but in some other life...
 
