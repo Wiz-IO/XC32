@@ -1,5 +1,6 @@
-# Basic module template
+# Basic modules template
 
+Adds uncompiled framework source codes
 
 ```py
 from modules import PRINT_MODULE_INFO
@@ -22,4 +23,11 @@ def init(env, params=''):
     PRINT_MODULE_INFO('MODULE TEMPLATE')
 
 ## End ########################################################################
+```
+
+```ini
+custom_module = 
+    PATH/md-name.py
+    PATH/FOLDER
+    md-freertos.py
 ```
