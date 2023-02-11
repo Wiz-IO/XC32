@@ -1,6 +1,6 @@
 # Basic modules template
 
-Adds uncompiled framework source codes ( existing ones, third-party )
+Compile & Link uncompiled framework source codes ( existing ones, third-party )
 
 <br>**Project INI**
 ```ini
