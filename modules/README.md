@@ -8,12 +8,14 @@ custom_module =
     PATH/md-name.py                 ; stand alone, module name must begin with 'md-'
     PATH/FOLDER                     ; bulk folder
     $PROJECT_DIR/PATH               ; userware
-    $MODULES/common/md-name.py      ; pre-defined ( common )
-    $MODULES/Arduino/md-name.py     ; pre-defined
-    $MODULES/Baremetal/md-name.py   ; pre-defined
-    md-freertos.py                  ; platform ( Arduino / Baremetal ) pre-defined
-    md-lwip.py                      ; platform ( Arduino / Baremetal ) pre-defined
+    $MODULES/common/md-name.py      ; predefined ( common )
+    $MODULES/Arduino/md-name.py     ; predefined
+    $MODULES/Baremetal/md-name.py   ; predefined
+    md-freertos.py                  ; platform ( Arduino / Baremetal ) predefined
+    md-lwip.py                      ; platform ( Arduino / Baremetal ) predefined
     md-xyz.py 1 2 3                 ; support params, separated by a space
+    
+; by default, predefined modules are compiled as static libraries, parameter SRC mean: compile and link as object
 ```
 
 <br>Module script:
