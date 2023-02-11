@@ -31,15 +31,13 @@ custom_xc32 = PATH/Microchip/xc32/vX.XX ; change compiller path
 
 ## Arduino
 * Arduino API
-* Digital & EINT
-* Analog - ADC & PWM
+* Digital & EINT [ all ]
+* Analog - ADC & PWM [ board defined ]
 * HardwareSerials [ all ]
 * SoftwareSerial [ 4 ]
 * USBSerial [ 1 ]
 * SPI [ all ]
 * I2C [ all ] / Wire
-* SoftTimers
-* fatfs, freeRTOS, tinyusb, lvgl, SD, LCD/TFT
 * TODO ... CAN, Ethernet, lwip, mbedtls ... etc
 
 ## Uploader
