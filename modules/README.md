@@ -5,8 +5,8 @@ Adds uncompiled framework source codes ( existing ones, third-party )
 <br>**Project INI**
 ```ini
 custom_module = 
-    PATH/md-name.py                 ; stand alone, module name must begin with 'md-'
-    PATH/FOLDER                     ; bulk folder
+    PATH/md-name.py                 ; stand alone
+    PATH/FOLDER                     ; all from folder, module names must begin with 'md-'
     $PROJECT_DIR/PATH               ; userware
     $MODULES/common/md-name.py      ; predefined ( common )
     $MODULES/Arduino/md-name.py     ; predefined
