@@ -5,10 +5,12 @@ Adds uncompiled framework source codes ( existing ones, third-party )
 <br>Project INI:
 ```ini
 custom_module = 
-    PATH/md-name.py
-    PATH/FOLDER
-    md-freertos.py
-    md-lwip.py
+    PATH/md-name.py     ; stand alone
+    PATH/FOLDER         ; bulk folder
+    $PROJECT_DIR/PATH   ; userware
+    $MODULES/md-name.py ; platform pre-defined
+    md-freertos.py      ; platform pre-defined
+    md-lwip.py          ; platform pre-defined
 ```
 
 <br>Module script:
