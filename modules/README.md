@@ -18,7 +18,7 @@ custom_module =
 ; by default, predefined modules are compiled as static libraries
 ```
 
-<br>Basic module script:
+<br>Basic module script ( it's actually a normal Python script for PlatformIO support )
 ```py
 from modules import PRINT_MODULE_INFO, dev_module_load
 
