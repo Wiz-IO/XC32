@@ -23,7 +23,7 @@ def init(env, params=''):
 
     # dev_module_load(env, '$MODULES/md-xxx.py') ### load other module
     
-    PRINT_MODULE_INFO('MODULE TEMPLATE')
+    PRINT_MODULE_INFO('MODULE NAME')
 
 ## End ########################################################################
 ```
@@ -35,4 +35,21 @@ custom_module =
     PATH/FOLDER
     md-freertos.py
     md-lwip.py
+```
+
+
+```
+PLATFORM: PlatformIO - PIC32 (1.0.0) > WizIO-PIC32MZ
+HARDWARE: 32MZ2048EFM100 200MHz, 512KB RAM, 2MB Flash
+PACKAGES:
+ - framework-XC32 @ 1.0.0
+   XC32 : 2.1
+   CORE   : PIC32MZ
+   CHIP   : 32MZ2048EFM100
+   STACK  : 1024
+   HEAP   : 65536
+   OPTI   : -O1
+   PROJECT MODULES <---------
+          : FREERTOS
+          : LWIP
 ```
