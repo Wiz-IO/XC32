@@ -49,7 +49,7 @@ PACKAGES:
    STACK  : 1024
    HEAP   : 65536
    OPTI   : -O1
-   PROJECT MODULES <---------
+   PROJECT MODULES       <-------<
           : FREERTOS
           : LWIP
       
