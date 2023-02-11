@@ -4,7 +4,7 @@ Adds uncompiled framework source codes
 
 <br>Module script:
 ```py
-from modules import PRINT_MODULE_INFO
+from modules import PRINT_MODULE_INFO, dev_module_load
 
 ## Execute Function ###########################################################
 
@@ -19,8 +19,10 @@ def init(env, params=''):
         # LIBS = env.BuildLibrary( OBJ_DIR, SRC_DIR, src_filter = [] ) ### COMPILE AS LIBRARY
     )
     
-    #env.BuildSources( OBJ_DIR, SRC_DIR, src_filter = [] ) ### COMPILE AS OBJECTS
+    # env.BuildSources( OBJ_DIR, SRC_DIR, src_filter = [] ) ### COMPILE AS OBJECTS
 
+    # dev_module_load(env, '$MODULES/md-xxx.py') # load other module
+    
     PRINT_MODULE_INFO('MODULE TEMPLATE')
 
 ## End ########################################################################
