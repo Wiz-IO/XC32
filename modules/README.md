@@ -33,7 +33,7 @@ def init(env, params=''): # entry point
         LIBS = env.BuildLibrary( OBJ_DIR, SRC_DIR, src_filter = [] ) ### COMPILE AS LIBRARY
     )
     
-    # env.BuildSources( OBJ_DIR, SRC_DIR, src_filter = [] ) ### COMPILE AS OBJECTS
+    # env.BuildSources( OBJ_DIR, SRC_DIR, src_filter = [ ??? ] ) ### COMPILE AS OBJECTS
 
     # dev_module_load(env, '$MODULES/md-xxx.py') ### load other module
     
