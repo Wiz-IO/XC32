@@ -30,7 +30,7 @@ def init(env, params=''): # entry point
     env.Append(
         CPPDEFINES = [ 'ANY FLAGS' ], 
         CPPPATH    = [ 'INCLUDE PATH' ], 
-        LIBS = env.BuildLibrary( OBJ_DIR, SRC_DIR, src_filter = [ ??? ] ) ### COMPILE AS LIBRARY
+        LIBS = env.BuildLibrary( OBJ_DIR, SRC_DIR, src_filter = [ '+<*>', '-<code>' ] ) ### COMPILE AS LIBRARY
     )
     
     # env.BuildSources( OBJ_DIR, SRC_DIR, src_filter = [ ??? ] ) ### COMPILE AS OBJECTS
