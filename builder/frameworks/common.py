@@ -64,6 +64,9 @@ def dev_init_compiler(env, Template=None):
     INFO('HEAP   : %s' % heap )
     opti = dev_get_value(env, 'opt', '-O1') # INIDOC
     INFO('OPTI   : %s' % opti )
+    generate_map_file = ''
+    if dev_get_value(env, 'mapfile', False): # INIDOC   
+        generate_map_file = '-Wl,-Map="mapfile.map"'
 
     env.Replace(
         PROGNAME = env.GetProjectOption('custom_name', 'APPLICATION') # INIDOC
@@ -75,7 +78,6 @@ def dev_init_compiler(env, Template=None):
         ],
         CPPPATH = [
             join('$PROJECT_DIR', 'src'),
-            join('$PROJECT_DIR', 'lib'),
             join('$PROJECT_DIR', 'include'),
         ],
         CFLAGS = [
@@ -119,6 +121,7 @@ def dev_init_compiler(env, Template=None):
         LINKFLAGS = [
             '-DXPRJ_default=default',
             '-mprocessor=' + env.mcu,
+            '--entry=_reset',            
             '-Wl,--script="p' + env.mcu + '.ld"',
             '-Wl,--defsym=__MPLAB_BUILD=1',
             '-Wl,--defsym=_min_heap_size=%s' % heap,
@@ -126,8 +129,7 @@ def dev_init_compiler(env, Template=None):
             '-Wl,--no-code-in-dinit',
             '-Wl,--no-dinit-in-serial-mem',
             '-Wl,--gc-sections',
-            #'-Wl,-Map="mapfile.map"',
-            '--entry=_reset',
+            generate_map_file
         ],
         BUILDERS = dict(
             ELF2HEX = Builder(
