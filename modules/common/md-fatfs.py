@@ -13,7 +13,7 @@ def init(env, params=''):
     PRJ_DIR = join( env.subst('$PROJECT_DIR'), 'include' )
     if not exists( join(PRJ_DIR, 'ffconf.h') ):
         copyfile( 
-            join(env.framework_dir, 'libraries', 'fatfs', 'ffconf'), 
+            join(SRC_DIR, 'ffconf'), 
             join(PRJ_DIR, 'ffconf.h') 
         ) 
 

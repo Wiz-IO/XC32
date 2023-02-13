@@ -16,7 +16,7 @@ def init(env, params=''):
     PRJ_DIR = join( env.subst('$PROJECT_DIR'), 'include' )
     if not exists( join(PRJ_DIR, 'tusb_config.h') ):
         copyfile( 
-            join(env.framework_dir, 'libraries', 'tinyusb', 'tusb_config'), 
+            join(SRC_DIR, 'tusb_config'), 
             join(PRJ_DIR, 'tusb_config.h') 
         ) 
 

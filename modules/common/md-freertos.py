@@ -13,7 +13,7 @@ def init(env, params=''):
     PRJ_DIR = join( env.subst('$PROJECT_DIR'), 'include' )
     if not exists( join(PRJ_DIR, 'FreeRTOSConfig.h') ): 
         copyfile(
-            join(env.framework_dir, 'libraries', 'freertos', 'FreeRTOSConfig'),
+            join(SRC_DIR, 'FreeRTOSConfig'),
             join(PRJ_DIR, 'FreeRTOSConfig.h')
         )
 

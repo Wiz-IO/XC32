@@ -12,9 +12,15 @@ def init(env, params=''):
     OBJ_DIR = join( '$BUILD_DIR', 'modules', 'lwip' )
     SRC_DIR = join( env.framework_dir, 'libraries', 'lwip')
 
-    # PRJ_DIR = join( env.subst('$PROJECT_DIR'), 'include' )
-    # if not exists( join(PRJ_DIR, '.h') ): copyfile()
-
+    PRJ_DIR = join( env.subst('$PROJECT_DIR'), 'include' )
+    if not exists( join(PRJ_DIR, 'lwipopts.h') ): 
+        template = 'b_lwipopts'
+        if 'ARDUINO' in params.upper(): 
+            template = 'a_lwipopts'
+        copyfile(
+            join(SRC_DIR, template),
+            join(PRJ_DIR, 'lwipopts.h')
+        )            
     env.Append(
         CPPDEFINES = [ 'LWIP' ],
         CPPPATH = [ 
@@ -25,7 +31,10 @@ def init(env, params=''):
 
     filter = [
         '-<*>', 
-        '+<core>',         
+        '+<port>',
+        '+<core>',  
+        '+<api>',
+        '+<netif/ethernet.c>',       
     ]
 
     if 'SRC' in params.upper():
