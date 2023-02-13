@@ -55,6 +55,8 @@ def dev_init_compiler(env, Template=None):
     INFO('XC32 : %s' % env.xc32_ver)
     if 'Arduino' in env['PIOFRAMEWORK']:
         INFO('CORE   : %s' % env.BoardConfig().get('build.core') )
+
+    env.EVB = env.BoardConfig().get('build.EVB')
     env.category = env.BoardConfig().get('build.category')
     env.mcu     = env.BoardConfig().get('build.mcu')
     INFO('CHIP   : %s' % env.mcu )
@@ -75,6 +77,7 @@ def dev_init_compiler(env, Template=None):
         #ASFLAGS=[],
         CPPDEFINES = [
            'F_CPU=' + dev_get_value(env, 'f_cpu', '200000000ul'),
+           'EVB=' + env.EVB,
         ],
         CPPPATH = [
             join('$PROJECT_DIR', 'src'),

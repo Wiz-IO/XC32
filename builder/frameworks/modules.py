@@ -8,7 +8,7 @@ from importlib.machinery import SourceFileLoader
 def PRINT_MODULE_INFO(txt): 
     INFO('\t  : %s' % txt)
 
-def dev_module_load(env, module_path, params=None):
+def dev_module_load(env, module_path, params=''):
     module_path = env.subst( module_path )
     name = hashlib.md5( module_path.encode() ).hexdigest()
     if name not in env.modules:
