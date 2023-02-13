@@ -9,7 +9,8 @@
     "mcu"       : "32MZ2048EFM100",
     "core"      : "PIC32MZ",    
     "variant"   : "WizIO-PIC32MZ",    
-    "f_cpu"     : "200000000ul"
+    "f_cpu"     : "200000000ul",
+    "EVB"       : "1"
   },
 
   "debug": { },
