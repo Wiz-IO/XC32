@@ -6,6 +6,7 @@ _( The project is a work in progress, there may be bugs... )_
 ![pic32mz](https://raw.githubusercontent.com/Wiz-IO/LIB/master/microchip/Arduino-PIC32MZ.jpg)
 
 ## [Framework Source Codes](https://github.com/Wiz-IO/framework-XC32)
+## [Examples](https://github.com/Wiz-IO/examples-XC32)
 
 ## Compiler<br>
 The Platform use **installed Microchip XC32 compiler** ( must work on Windows / Linux / Mac )
