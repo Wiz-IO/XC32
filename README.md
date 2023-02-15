@@ -19,8 +19,8 @@ _Note: be sure [**git**](https://git-scm.com/downloads) is installed_
 ```ini
 custom_xc32 = PATH/Microchip/xc32/vX.XX ; change compiller path
 ```
-* Uploader use "libusb-1.0.dll" https://github.com/libusb/libusb/releases
-* * Put DLL in PlatformIO Python folder ( .platformio/penv/Scripts )
+* Uploader use [libusb-1.0](https://github.com/libusb/libusb/releases)
+* Download & Put DLL/LIB in PlatformIO Python folder ( .platformio/penv/Scripts )
 
 **[and read WiKI](https://github.com/Wiz-IO/XC32/wiki)**
 
