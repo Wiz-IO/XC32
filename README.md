@@ -37,7 +37,7 @@ custom_xc32 = PATH/Microchip/xc32/vX.XX ; change compiller path
 * USBSerial [ 1 ]
 * SPI [ all ]
 * I2C [ all ] / Wire
-* etc
+* FreeRTOS mode
 * TODO ... CAN, Ethernet, lwip, mbedtls ... etc
 
 ## Upload
@@ -46,7 +46,7 @@ custom_xc32 = PATH/Microchip/xc32/vX.XX ; change compiller path
 * "Plan B" - use MPLAB X IPE
 
 ## Debug
-* stdio printf() or Serial.printf()
+* printf() or Serial.printf()
 * ICD / JTAG - Challenge, but in some other life...
 
 
