@@ -9,7 +9,7 @@ PYTHON_PATH = dirname(proc.get_pythonexe_path())
 
 env = DefaultEnvironment()
 
-env.xc32_dir = env.GetProjectOption('custom_x32', 'C:\\Program Files (x86)\\Microchip\\xc32\\v2.10')
+env.xc32_dir = env.GetProjectOption('custom_x32', 'C:\\Program Files (x86)\\Microchip\\xc32\\v2.10') # TODO: Last version
 env['ENV']['PATH'] = '' + join(env.xc32_dir, 'bin' + ';' + PYTHON_PATH)
 
 env.xc32_ver = 2.10
@@ -34,19 +34,20 @@ env.Replace(
 prg = None
 
 ###############################################################################
+
 if 'Baremetal' in env['PIOFRAMEWORK'] or 'Arduino' in env['PIOFRAMEWORK']: 
     elf = env.BuildProgram()
     hex = env.ELF2HEX( join('$BUILD_DIR', '${PROGNAME}'), elf )
     prg = env.Alias( 'buildprog', hex)
-
-else: ERROR('[MAIN] Wrong platform: %s' % env['PIOFRAMEWORK'][0])
+else: 
+    ERROR('[MAIN] Wrong platform: %s' % env['PIOFRAMEWORK'][0])
 
 AlwaysBuild( prg )
 
-# DEBUG - Challenge, but in some other life... ################################
+# DEBUG - Challenge, but in some other life...
 Default( prg )
 
-# UPLOAD ######################################################################
+# UPLOAD
 upload = env.Alias('upload', prg, env.VerboseAction('$UPLOADCMD', 'Uploading...'), ) 
 AlwaysBuild( upload )
 
