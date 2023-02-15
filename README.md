@@ -22,7 +22,7 @@ custom_xc32 = PATH/Microchip/xc32/vX.XX ; change compiller path
 * Uploader use [libusb-1.0](https://github.com/libusb/libusb/releases)
 * Download & Put DLL/LIB in PlatformIO Python folder ( .platformio/penv/Scripts )
 
-**[and read WiKI](https://github.com/Wiz-IO/XC32/wiki)**
+# [and read WiKI](https://github.com/Wiz-IO/XC32/wiki)
 
 ## Boards
 * Curiosity v1.0
