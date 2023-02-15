@@ -5,7 +5,6 @@ from os import listdir
 from shutil import copyfile
 from SCons.Script import Builder
 from wiz import INFO, FRAMEWORK_NAME
-from modules import dev_init_modules
 import uploader
 
 def dev_uploader(target, source, env):
@@ -142,7 +141,5 @@ def dev_init_compiler(env, Template=None):
         ),
         UPLOADCMD = dev_uploader,
     )
-
-    dev_init_modules(env)
 
 ###############################################################################
