@@ -1,7 +1,6 @@
-# Copyright 2023 (c) WizIO ( Georgi Angelov )
+# Copyright 2023 WizIO ( Georgi Angelov )
 
-import os, sys, shutil, time, click, inspect
-from os.path import exists
+import sys, time, click, inspect
 
 PLATFORM_NAME  = 'XC32'
 FRAMEWORK_NAME = 'framework-' + PLATFORM_NAME
@@ -20,26 +19,3 @@ def ERROR(txt = ''):
 
 def INFO(txt): 
     click.secho( '   %s' % (txt), fg='blue') # BUG: Windows: 4 same chars
-
-def MKDIR(dir, test=False):    
-    if dir and not exists(dir): 
-        if test:
-            if '.platformio' not in dir or PLATFORM_NAME not in dir: # just in case
-                ERROR('Platform name is not in path: %s' % dir) 
-
-        os.makedirs(dir, exist_ok=True)
-
-def RMDIR(dir, test=False):  
-    if dir and exists(dir): 
-        if test:
-            if '.platformio' not in dir or PLATFORM_NAME not in dir: # just in case
-                ERROR('Platform name is not in path: %s' % dir)
-
-        shutil.rmtree( dir, ignore_errors=True )
-
-        timeout = 50
-        while exists( dir ) and timeout > 0: 
-            time.sleep(.1)  
-            timeout -= 1  
-        if timeout == 0: 
-            ERROR('Delete folder: %s' % dir)

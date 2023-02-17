@@ -1,6 +1,6 @@
-# Copyright 2023 (c) WizIO ( Georgi Angelov )
+# Copyright 2023 WizIO ( Georgi Angelov )
 
-from os.path import join, dirname, exists
+from os.path import join, dirname
 from os import listdir
 from shutil import copyfile
 from SCons.Script import Builder
@@ -9,7 +9,7 @@ import uploader
 
 def dev_uploader(target, source, env):
     p = env.BoardConfig().get('upload.protocol', None)
-    if p == 'curiosity':
+    if p == 'CURIOSITY':
         from uploader.CURIOSITY import upload
         uploader.CURIOSITY.upload(target, source, env)
     elif p == 'GEN4':
@@ -27,19 +27,17 @@ def create_template(env, Template):
         copyfile( join(env.platform_dir, 'boards', env.BoardConfig().id), join(dir, 'fuses.c') )    
         if Template: 
             Template(env)
-        open( join(env.subst('$PROJECT_DIR'), 'include', 'user_config.h'), 'w').write('''#ifndef _USER_CONFIG_H_
-#define _USER_CONFIG_H_
+        open( join(env.subst('$PROJECT_DIR'), 'include', 'user_config.h'), 'w').write('''#pragma once
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
-#include <stdint.h>
+
 
 #ifdef __cplusplus
 }
 #endif
-#endif /* _USER_CONFIG_H_ */
 ''')
 
 def dev_get_value(env, name, default):
@@ -55,7 +53,6 @@ def dev_init_compiler(env, Template=None):
     if 'Arduino' in env['PIOFRAMEWORK']:
         INFO('CORE   : %s' % env.BoardConfig().get('build.core') )
 
-    env.EVB = env.BoardConfig().get('build.EVB')
     env.category = env.BoardConfig().get('build.category')
     env.mcu     = env.BoardConfig().get('build.mcu')
     INFO('CHIP   : %s' % env.mcu )
@@ -73,10 +70,9 @@ def dev_init_compiler(env, Template=None):
         PROGNAME = env.GetProjectOption('custom_name', 'APPLICATION') # INIDOC
     )
     env.Append(
-        #ASFLAGS=[],
+        ASFLAGS=[  '-mhard-float' ],
         CPPDEFINES = [
            'F_CPU=' + dev_get_value(env, 'f_cpu', '200000000ul'),
-           'EVB=' + env.EVB,
         ],
         CPPPATH = [
             join('$PROJECT_DIR', 'src'),
@@ -101,10 +97,10 @@ def dev_init_compiler(env, Template=None):
             '-Wno-missing-field-initializers',
             '-Wno-missing-braces',
             '-Wno-sign-compare',
-            '-Wno-comment'
+            '-Wno-comment',
         ],
         CXXFLAGS = [
-            #'-std=c++11',
+            #'-std=c++14',
             '-fno-rtti',
             '-fno-exceptions',
             '-fno-use-cxa-atexit',      # __cxa_atexit, __dso_handle
@@ -119,7 +115,7 @@ def dev_init_compiler(env, Template=None):
             join('$PROJECT_DIR', 'lib'),
             join(env.framework_dir, 'lib'),
         ],
-        LIBS = [ 'm', 'c' ], # 'lega-c'
+        LIBS = [ 'm' ], # 'lega-c'
         LINKFLAGS = [
             '-DXPRJ_default=default',
             '-mprocessor=' + env.mcu,

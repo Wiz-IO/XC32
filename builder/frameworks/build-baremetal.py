@@ -1,4 +1,4 @@
-# Copyright 2023 (c) WizIO ( Georgi Angelov )
+# Copyright 2023 WizIO ( Georgi Angelov )
 
 from os.path import join
 from SCons.Script import DefaultEnvironment

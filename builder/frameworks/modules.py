@@ -1,4 +1,4 @@
-# Copyright 2023 (c) WizIO ( Georgi Angelov )
+# Copyright 2023 WizIO ( Georgi Angelov )
 
 import os, hashlib
 from os.path import join, isabs, exists, isdir, basename
