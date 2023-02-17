@@ -5,3 +5,5 @@ from platformio.managers.platform import PlatformBase
 class Xc32Platform(PlatformBase):
     def is_embedded(self):
         return True
+
+###############################################################################
