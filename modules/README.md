@@ -40,7 +40,7 @@ def init(env, params=''): # entry point
     PRINT_MODULE_INFO('MODULE NAME')
 
 ```
-as examples: see [here](https://github.com/Wiz-IO/XC32/tree/main/modules)
+as examples: this folders
 
 <br>LOG:
 ```
