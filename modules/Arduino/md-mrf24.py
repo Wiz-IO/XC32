@@ -1,7 +1,6 @@
 # Copyright 2023 WizIO ( Georgi Angelov )
 
-from os.path import join, exists
-from shutil import copyfile
+from os.path import join
 from modules import PRINT_MODULE_INFO, dev_module_load
 
 def init(env, params=''):
