@@ -15,7 +15,7 @@ custom_module =
     md-lwip.py                      ; platform ( Arduino / Baremetal ) predefined
     md-tinyusb.py = HOST            ; support params, separated by a space
     
-; by default, predefined modules are compiled as static libraries
+; by default, predefined modules are compiled as static libraries, md-name.py = SRC or LIB
 ```
 
 <br>**Basic module script** ( it's actually a normal Python script for PlatformIO support ( as extra script ) )
