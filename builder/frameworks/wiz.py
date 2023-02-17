@@ -19,3 +19,5 @@ def ERROR(txt = ''):
 
 def INFO(txt): 
     click.secho( '   %s' % (txt), fg='blue') # BUG: Windows: 4 same chars
+
+###############################################################################
