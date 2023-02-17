@@ -1,4 +1,4 @@
-# Copyright 2023 (c) WizIO ( Georgi Angelov )
+# Copyright 2023 WizIO ( Georgi Angelov )
 
 from platformio.managers.platform import PlatformBase
 
