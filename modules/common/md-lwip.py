@@ -13,9 +13,15 @@ def init(env, params=''):
     SRC_DIR = join( env.framework_dir, 'libraries', 'lwip')
 
     PRJ_DIR = join( env.subst('$PROJECT_DIR'), 'include' )
+
+    arduino = False
+    for define in env.get('CPPDEFINES'):
+        if 'ARDUINO' in define:
+            arduino = True
+
     if not exists( join(PRJ_DIR, 'lwipopts.h') ): 
         template = 'b_lwipopts'
-        if 'ARDUINO' in params.upper(): 
+        if arduino: 
             template = 'a_lwipopts'
         copyfile(
             join(SRC_DIR, template),
