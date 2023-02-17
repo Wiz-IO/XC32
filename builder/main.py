@@ -1,6 +1,6 @@
-# Copyright 2023 (c) WizIO ( Georgi Angelov )
+# Copyright 2023 WizIO ( Georgi Angelov )
 
-from os.path import join, dirname
+from os.path import join, dirname, exists
 from SCons.Script import AlwaysBuild, DefaultEnvironment, Default
 from frameworks.wiz import ERROR
 
@@ -9,7 +9,12 @@ PYTHON_PATH = dirname(proc.get_pythonexe_path())
 
 env = DefaultEnvironment()
 
-env.xc32_dir = env.GetProjectOption('custom_x32', 'C:\\Program Files (x86)\\Microchip\\xc32\\v2.10') # TODO: Last version
+XC32PATH = join(dirname( env['PLATFORM_MANIFEST'] ), 'XC32PATH')
+p = 'C:\\Program Files\\Microchip\\xc32\\v4.21'
+if exists( XC32PATH ):
+    f = open(XC32PATH, 'r')
+    p = f.read()
+env.xc32_dir = env.GetProjectOption('custom_x32', p) 
 env['ENV']['PATH'] = '' + join(env.xc32_dir, 'bin' + ';' + PYTHON_PATH)
 
 env.xc32_ver = 2.10
