@@ -1,1 +1,1 @@
-TODO
+# Baremetal predefined module scripts
