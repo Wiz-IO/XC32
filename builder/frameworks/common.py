@@ -49,13 +49,13 @@ def dev_init_compiler(env, Template=None):
     env['FRAMEWORK_DIR'] = env.framework_dir = env.PioPlatform().get_package_dir( FRAMEWORK_NAME )
     create_template(env, Template)
 
-    INFO('XC32 : %s' % env.xc32_ver)
+    INFO('XC32   : %s' % env.xc32_ver)
     if 'Arduino' in env['PIOFRAMEWORK']:
         INFO('CORE   : %s' % env.BoardConfig().get('build.core') )
 
     env.category = env.BoardConfig().get('build.category')
     env.mcu     = env.BoardConfig().get('build.mcu')
-    INFO('CHIP   : %s' % env.mcu )
+    INFO('CHIP   : PIC%s' % env.mcu )
     stack = dev_get_value(env, 'stack', '1024') # INIDOC
     INFO('STACK  : %s' % stack )
     heap = dev_get_value(env, 'heap', '65536') # INIDOC
