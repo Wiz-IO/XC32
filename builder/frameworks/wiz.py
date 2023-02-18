@@ -13,11 +13,11 @@ def LOG(txt = ''):
 
 def ERROR(txt = ''):
     txt = '%s() %s' % (inspect.stack()[1][3], txt)
-    click.secho( '[ERROR] %s \n' % txt, fg='red') 
+    click.secho( '[ERROR] %s \n' % txt, fg='red')
     time.sleep(.1)
     sys.exit(-1)
 
-def INFO(txt): 
+def INFO(txt):
     click.secho( '   %s' % (txt), fg='blue') # BUG: Windows: 4 same chars
 
 ###############################################################################

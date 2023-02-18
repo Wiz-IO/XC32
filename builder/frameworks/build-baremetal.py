@@ -33,14 +33,29 @@ int main(void)
 ''')
     dev_ini_add(env, '''
 ;custom_xc32 = C:/Program Files/Microchip/xc32/vX.XX
-;custom_heap = 16384        
+;custom_heap = 10000
+;custom_stack = 1000
 ;monitor_port = COM26
 ;monitor_speed = 115200
-;build_flags = 
+;build_flags =
+;custom_module = $MODULES/common/md-freertos.py
 ''' )
 
 env = DefaultEnvironment()
 dev_init_compiler(env, template)
+
+env.Append(
+    CPPPATH = [
+        join(env.framework_dir, 'include'),
+        join(env.framework_dir, 'src', 'SYS_Cache'),
+    ],
+)
+
+env.BuildSources(
+    join('$BUILD_DIR', 'SYS', 'Cache'),
+    join(env.framework_dir, 'src', 'SYS_Cache')
+)
+
 dev_init_modules(env)
 
 ###############################################################################

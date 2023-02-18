@@ -24,8 +24,8 @@ def dev_ini_add(env, txt):
 def create_template(env, Template):
     dir = join( env.subst('$PROJECT_DIR'), 'src' )
     if not listdir( dir ):
-        copyfile( join(env.platform_dir, 'boards', env.BoardConfig().id), join(dir, 'fuses.c') )    
-        if Template: 
+        copyfile( join(env.platform_dir, 'boards', env.BoardConfig().id), join(dir, 'fuses.c') )
+        if Template:
             Template(env)
         open( join(env.subst('$PROJECT_DIR'), 'include', 'user_config.h'), 'w').write('''#pragma once
 #ifdef __cplusplus
@@ -57,13 +57,13 @@ def dev_init_compiler(env, Template=None):
     env.mcu     = env.BoardConfig().get('build.mcu')
     INFO('CHIP   : %s' % env.mcu )
     stack = dev_get_value(env, 'stack', '1024') # INIDOC
-    INFO('STACK  : %s' % stack ) 
+    INFO('STACK  : %s' % stack )
     heap = dev_get_value(env, 'heap', '65536') # INIDOC
     INFO('HEAP   : %s' % heap )
     opti = dev_get_value(env, 'opt', '-O1') # INIDOC
     INFO('OPTI   : %s' % opti )
     generate_map_file = ''
-    if dev_get_value(env, 'mapfile', False): # INIDOC   
+    if dev_get_value(env, 'mapfile', False): # INIDOC
         generate_map_file = '-Wl,-Map="mapfile.map"'
 
     env.Replace(
@@ -119,7 +119,7 @@ def dev_init_compiler(env, Template=None):
         LINKFLAGS = [
             '-DXPRJ_default=default',
             '-mprocessor=' + env.mcu,
-            '--entry=_reset',            
+            '--entry=_reset',
             '-Wl,--script="p' + env.mcu + '.ld"',
             '-Wl,--defsym=__MPLAB_BUILD=1',
             '-Wl,--defsym=_min_heap_size=%s' % heap,
