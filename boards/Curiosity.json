@@ -1,22 +1,21 @@
 {
-  "name"        : "Curiosity",
+  "name"        : "Curiosity PIC32MZ (PKOB)",
   "url"         : "https://github.com/Wiz-IO/XC32",
-  "vendor"      : "Microchip Curiosity PIC32MZ EF v1.0",
+  "vendor"      : "Microchip PIC32MZ2048EFM100",
   "frameworks"  : [ "Baremetal", "Arduino" ],
 
   "build": {
     "category"  : "pic32mx",
     "mcu"       : "32MZ2048EFM100",
-    "core"      : "PIC32MZ",    
-    "variant"   : "WizIO-PIC32MZ",    
-    "f_cpu"     : "200000000ul",
-    "EVB"       : "1"
+    "core"      : "EFM",    
+    "variant"   : "WizIO-PIC32MZ-EFM100",    
+    "f_cpu"     : "200000000ul"
   },
 
   "debug": { },
 
   "upload": {
-    "protocol"          : "curiosity",
+    "protocol"          : "CURIOSITY",
     "maximum_ram_size"  :      524288,
     "maximum_size"      :     2097152
 

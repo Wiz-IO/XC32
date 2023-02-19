@@ -1,0 +1,35 @@
+{
+  "name"        : "WizIO-PIC32MZ-EFM100",
+  "url"         : "https://github.com/Wiz-IO/XC32",
+  "vendor"      : "Microchip PIC32MZ2048EFM100",
+  "frameworks"  : [ "Baremetal", "Arduino" ],
+
+  "build": {
+    "category"  : "pic32mx",
+    "mcu"       : "32MZ2048EFM100",
+    "core"      : "EFM",    
+    "variant"   : "WizIO-PIC32MZ-EFM100",    
+    "f_cpu"     : "200000000ul"
+  },
+
+  "debug": { },
+
+  "upload": {
+    "protocol"          : "GEN4",
+    "maximum_ram_size"  :  524288,
+    "maximum_size"      : 2097152,
+
+    "info" : {
+      "power"             : 0,
+      "reset"             : 0,
+      "device_id"         : "0x0723B053",      
+      "flash"             : "0x1D000000",
+      "flash_size"        : "0x200000",
+      "boot"              : "0x1FC00000",
+      "boot_size"         : "0xFF00",
+      "config"            : "0x1FC0FFC0",
+      "config_size"       : "0x40"
+    }
+
+  }
+}
