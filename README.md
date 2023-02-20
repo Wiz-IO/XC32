@@ -42,6 +42,7 @@ custom_xc32 = PATH/Microchip/xc32/vX.XX ; change compiller path
 * ICD 4 / Snap ( integrated, very fast )
 * Curiosity PKOB ( integrated )
 * "Plan B" - use MPLAB X IPE
+* TODO: Microsoft UF2
 
 ## Debug
 * printf() or Serial.printf()
