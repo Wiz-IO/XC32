@@ -9,12 +9,16 @@ import uploader
 
 def dev_uploader(target, source, env):
     p = env.BoardConfig().get('upload.protocol', None)
+    p = env.subst("$UPLOAD_PROTOCOL") or env.BoardConfig().get('upload.protocol', None)
     if p == 'CURIOSITY':
         from uploader.CURIOSITY import upload
         uploader.CURIOSITY.upload(target, source, env)
     elif p == 'GEN4':
         from uploader.GEN4 import upload
         uploader.GEN4.upload(target, source, env)
+    elif p == 'UF2':
+        from uploader.UF2 import upload
+        uploader.UF2.upload(target, source, env)        
 
 def dev_ini_add(env, txt):
     f = open( join( env.subst('$PROJECT_DIR'), 'platformio.ini' ), 'a+' )
