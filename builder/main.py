@@ -17,6 +17,8 @@ if exists( XC32PATH ):
 env.xc32_dir = env.GetProjectOption('custom_x32', p) 
 env['ENV']['PATH'] = '' + join(env.xc32_dir, 'bin' + ';' + PYTHON_PATH)
 
+env['ENV']['PATH'] += ';C:\Windows\system32\WBEM' # UF2
+
 env.xc32_ver = 2.10
 x = env.xc32_dir.replace('/','').replace('\\','').split('xc32')
 env.xc32_ver = float(x[1].replace('v',''))
