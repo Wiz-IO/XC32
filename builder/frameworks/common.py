@@ -60,6 +60,8 @@ def dev_init_compiler(env, Template=None):
     INFO('STACK  : %s' % stack )
     heap = dev_get_value(env, 'heap', '65536') # INIDOC
     INFO('HEAP   : %s' % heap )
+    linker = dev_get_value(env, 'linker', 'p' + env.mcu + '.ld') # INIDOC
+    INFO('LINK   : %s' % linker )    
     opti = dev_get_value(env, 'opt', '-O1') # INIDOC
     INFO('OPTI   : %s' % opti )
     generate_map_file = ''
@@ -120,7 +122,7 @@ def dev_init_compiler(env, Template=None):
             '-DXPRJ_default=default',
             '-mprocessor=' + env.mcu,
             '--entry=_reset',
-            '-Wl,--script="p' + env.mcu + '.ld"',
+            '-Wl,--script="%s"' % linker,
             '-Wl,--defsym=__MPLAB_BUILD=1',
             '-Wl,--defsym=_min_heap_size=%s' % heap,
             '-Wl,--defsym=_min_stack_size=%s' % stack,
