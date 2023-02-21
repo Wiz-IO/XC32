@@ -1,11 +1,11 @@
 # Copyright 2023 WizIO ( Georgi Angelov )
 
+import sys
 from os.path import join, dirname, exists
 from SCons.Script import AlwaysBuild, DefaultEnvironment, Default
 from frameworks.wiz import ERROR
-
 from platformio import proc
-PYTHON_PATH = dirname(proc.get_pythonexe_path())
+PYTHON_PATH = dirname( proc.get_pythonexe_path() )
 
 env = DefaultEnvironment()
 
@@ -16,8 +16,8 @@ if exists( XC32PATH ):
     p = f.read()
 env.xc32_dir = env.GetProjectOption('custom_x32', p) 
 env['ENV']['PATH'] = '' + join(env.xc32_dir, 'bin' + ';' + PYTHON_PATH)
-
-env['ENV']['PATH'] += ';C:\Windows\system32\WBEM' # UF2
+if sys.platform == "win32":
+    env['ENV']['PATH'] += ';C:\Windows\system32\WBEM' # need for UF2
 
 env.xc32_ver = 2.10
 x = env.xc32_dir.replace('/','').replace('\\','').split('xc32')
