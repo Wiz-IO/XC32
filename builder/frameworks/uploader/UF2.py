@@ -1,3 +1,4 @@
+# https://github.com/microsoft/uf2/blob/master/utils/uf2conv.py
 #!/usr/bin/env python3
 import sys
 import struct
@@ -5,9 +6,7 @@ import subprocess
 import re
 import os
 import os.path
-import argparse
 import time
-import serial
 from os.path import join
 from platform import system
 
@@ -15,11 +14,8 @@ UF2_MAGIC_START0 = 0x0A324655 # "UF2\n"
 UF2_MAGIC_START1 = 0x9E5D5157 # Randomly selected
 UF2_MAGIC_END    = 0x0AB16F30 # Ditto
 
-appstartaddr    = 0x9D000000
-familyid        = 0xAABBCCDD 
-families = {
-    'PIC32' : 0xAABBCCDD,
-}
+familyid         = 0xAABBCCDD # PIC32
+appstartaddr     = 0x1D000000
 
 INFO_FILE = "/INFO_UF2.TXT"
 
@@ -167,7 +163,7 @@ def convert_from_hex_to_uf2(buf):
 
 def to_str(b):
     #return b.decode("utf-8")
-    return b.decode("utf-8",errors='ignore')
+    return b.decode("utf-8", errors='ignore')
 
 def get_drives():
     drives = []
@@ -197,17 +193,14 @@ def get_drives():
 
     return list(filter(has_info, drives))
 
-
 def board_id(path):
     with open(path + INFO_FILE, mode='r') as file:
         file_content = file.read()
     return re.search("Board-ID: ([^\r\n]*)", file_content).group(1)
 
-
 def list_drives():
     for d in get_drives():
         print(d, board_id(d))
-
 
 def write_file(name, buf):
     with open(name, "wb") as f:
@@ -215,7 +208,6 @@ def write_file(name, buf):
     print("  Wrote %d bytes to %s" % (len(buf), name))
 
 
-# TODO
 # WizIO 2021 Georgi Angelov
 #   http://www.wizio.eu/
 
