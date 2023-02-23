@@ -37,9 +37,9 @@ _Note: be sure [**git**](https://git-scm.com/downloads) is installed_
 * TODO ... CAN, Ethernet, lwip, mbedtls ... etc
 
 ## Upload
-* ICD 4 / Snap ( integrated, very fast )
+* [ICD 4 / Snap ( integrated, very fast )](https://github.com/Wiz-IO/XC32/wiki#uploader)
 * Curiosity PKOB ( integrated )
-* Microsoft UF2 ( USB MSD )
+* [Microsoft UF2 ( USB MSD )](https://github.com/Wiz-IO/examples-XC32/tree/main/PIC32MZ-EFM-UF2)
 * "Plan B" - use MPLAB X IPE
 
 
