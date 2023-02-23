@@ -14,9 +14,7 @@ Download & Put DLL/LIB in PlatformIO Python folder ( .platformio/penv/Scripts )<
 * **Install Platform**<br> **ARDUINO BUILDER IS NOT READY YET**<br>
 PlatformIO Home > Platforms > Advanced Installation: paste https://github.com/Wiz-IO/XC32<br>
 _Note: be sure [**git**](https://git-scm.com/downloads) is installed_
-```ini
-custom_xc32 = PATH/Microchip/xc32/vX.XX ; change compiller path
-```
+
 ## [and read Wiki](https://github.com/Wiz-IO/XC32/wiki)
 
 ## Boards
