@@ -8,7 +8,7 @@ _( The project is a work in progress, there may be bugs... )_
 ## Compiler<br>
 The Platform use **installed Microchip XC32 compiler** ( must work on Windows / Linux / Mac )
 <br>
-* Install XC32 from the Microchip website
+* [Install XC32](https://github.com/Wiz-IO/XC32/wiki#compiler) from the Microchip website
 * Uploader use [libusb-1.0](https://github.com/libusb/libusb/releases)<br>
 Download & Put DLL/LIB in PlatformIO Python folder ( .platformio/penv/Scripts )<br>
 * **Install Platform**<br> **ARDUINO BUILDER IS NOT READY YET**<br>
