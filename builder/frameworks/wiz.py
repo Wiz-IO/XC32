@@ -5,9 +5,6 @@ import sys, time, click, inspect
 PLATFORM_NAME  = 'XC32'
 FRAMEWORK_NAME = 'framework-' + PLATFORM_NAME
 
-MODE_INSTALL    = 0
-MODE_INTEGRATE  = 1
-
 def LOG(txt = ''):
     pass
 
