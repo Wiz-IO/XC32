@@ -16,8 +16,6 @@ PlatformIO Home > Platforms > Advanced Installation: paste https://github.com/Wi
 _Note: be sure [**git**](https://git-scm.com/downloads) is installed_
 
 ## [and Read Wiki](https://github.com/Wiz-IO/XC32/wiki)
-## [Framework Source Codes](https://github.com/Wiz-IO/framework-XC32)
-## [Examples](https://github.com/Wiz-IO/examples-XC32)
 
 ## Boards
 * Curiosity v1.0
@@ -48,6 +46,9 @@ _Note: be sure [**git**](https://git-scm.com/downloads) is installed_
 ## Debug
 * printf() or Serial.printf()
 * ICD / JTAG - Challenge, but in some other life...
+
+## [Examples](https://github.com/Wiz-IO/examples-XC32)
+## [Framework Source Codes](https://github.com/Wiz-IO/framework-XC32)
 
 [![DEMO](https://img.youtube.com/vi/salZwXYZfkg/0.jpg)](https://www.youtube.com/watch?v=salZwXYZfkg "DEMO")
 
