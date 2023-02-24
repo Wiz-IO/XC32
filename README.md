@@ -58,7 +58,7 @@ _Note: be sure [**git**](https://git-scm.com/downloads) is installed_
 * [Microchip XC32](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers/licenses)
 * [Arduino Core API - GNU](https://github.com/arduino/ArduinoCore-API)
 * [SbySpasov PLIB MZ - GNU](https://github.com/SbySpasov/PLIB_MZ/blob/master/license.txt)
-* [FreeRTOS - Copyright Amazon.com, Inc. - MIT](https://github.com/FreeRTOS/FreeRTOS-Kernel/blob/main/LICENSE.md)
+* [FreeRTOS - MIT](https://github.com/FreeRTOS/FreeRTOS-Kernel/blob/main/LICENSE.md)
 * [lwIP - BSD](https://github.com/lwip-tcpip/lwip/blob/master/COPYING)
 * [lvgl - MIT](https://github.com/lvgl/lvgl/blob/master/LICENCE.txt)
 * [PIC32 for the hobbyist](https://aidanmocke.com/about/)
