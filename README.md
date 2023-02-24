@@ -11,7 +11,7 @@ The Platform use **installed Microchip XC32 compiler** ( must work on Windows / 
 * [Install XC32](https://github.com/Wiz-IO/XC32/wiki#compiler) from the Microchip website
 * Uploader use [libusb-1.0](https://github.com/libusb/libusb/releases)<br>
 Download & Put DLL/LIB in PlatformIO Python folder ( .platformio/penv/Scripts )<br>
-* **Install Platform**<br> **ARDUINO BUILDER IS NOT READY YET**<br>
+* **Install Platform**<br>
 PlatformIO Home > Platforms > Advanced Installation: paste https://github.com/Wiz-IO/XC32<br>
 _Note: be sure [**git**](https://git-scm.com/downloads) is installed_
 
