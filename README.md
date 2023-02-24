@@ -56,10 +56,10 @@ _Note: be sure [**git**](https://git-scm.com/downloads) is installed_
 
 * [PlatformIO - Apache License 2.0](https://github.com/platformio/platformio-vscode-ide/blob/develop/LICENSE)
 * [Microchip XC32](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers/licenses)
-* [Arduino Core API - GNU LGPL 2.1](https://github.com/arduino/ArduinoCore-API)
-* [SbySpasov PLIB MZ - GNU License](https://github.com/SbySpasov/PLIB_MZ/blob/master/license.txt)
-* [FreeRTOS - Copyright Amazon.com, Inc. - MIT license](https://github.com/FreeRTOS/FreeRTOS-Kernel/blob/main/LICENSE.md)
-* [lwIP is (c) the Swedish Institute of Computer Science and licenced under the BSD license.](https://github.com/lwip-tcpip/lwip/blob/master/COPYING)
+* [Arduino Core API - GNU](https://github.com/arduino/ArduinoCore-API)
+* [SbySpasov PLIB MZ - GNU](https://github.com/SbySpasov/PLIB_MZ/blob/master/license.txt)
+* [FreeRTOS - Copyright Amazon.com, Inc. - MIT](https://github.com/FreeRTOS/FreeRTOS-Kernel/blob/main/LICENSE.md)
+* [lwIP - BSD](https://github.com/lwip-tcpip/lwip/blob/master/COPYING)
 * [lvgl - MIT](https://github.com/lvgl/lvgl/blob/master/LICENCE.txt)
 * [PIC32 for the hobbyist](https://aidanmocke.com/about/)
 
