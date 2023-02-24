@@ -50,8 +50,19 @@ _Note: be sure [**git**](https://git-scm.com/downloads) is installed_
 ## [Framework Source Codes](https://github.com/Wiz-IO/framework-XC32)
 ## [Examples](https://github.com/Wiz-IO/examples-XC32)
 
-## TODO...
 [![DEMO](https://img.youtube.com/vi/salZwXYZfkg/0.jpg)](https://www.youtube.com/watch?v=salZwXYZfkg "DEMO")
+
+## Licensing, Credits, Information used
+
+* [PlatformIO - Apache License 2.0](https://github.com/platformio/platformio-vscode-ide/blob/develop/LICENSE)
+* [Microchip XC32](https://www.microchip.com/en-us/tools-resources/develop/mplab-xc-compilers/licenses)
+* [Arduino Core API - GNU LGPL 2.1](https://github.com/arduino/ArduinoCore-API)
+* [SbySpasov PLIB MZ - GNU License](https://github.com/SbySpasov/PLIB_MZ/blob/master/license.txt)
+* [FreeRTOS - Copyright Amazon.com, Inc. - MIT license](https://github.com/FreeRTOS/FreeRTOS-Kernel/blob/main/LICENSE.md)
+* [lwIP is (c) the Swedish Institute of Computer Science and licenced under the BSD license.](https://github.com/lwip-tcpip/lwip/blob/master/COPYING)
+* [lvgl - MIT](https://github.com/lvgl/lvgl/blob/master/LICENCE.txt)
+* [PIC32 for the hobbyist](https://aidanmocke.com/about/)
+
 ![curiosity](https://microchipdeveloper.com/local--files/boards-i:curiosity-pic32mz/PIC32MZ-CURIOSITY.png)
 
 >If you want to help / support or treat me to Coffee  [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ESUP9LCZMZTD6)
