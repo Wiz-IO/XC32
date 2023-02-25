@@ -31,13 +31,11 @@ def init(env, params=''):
         CPPDEFINES = [ 'LWIP' ],
         CPPPATH = [ 
             join(SRC_DIR, 'include'), 
-            join(SRC_DIR, 'port'), 
         ]
     )
 
     filter = [
         '-<*>', 
-        '+<port>',
         '+<core>',  
         '+<api>',
         '+<netif/ethernet.c>',       
