@@ -18,16 +18,16 @@ def init(env, params=''):
         ) 
 
     env.Append(       
-        CPPDEFINES = [ 'TINYUSB', 'CFG_TUSB_MCU=OPT_MCU_PIC32MZ', 'CFG_TUSB_OS=OPT_OS_NONE' ], 
+        CPPDEFINES = [ 'TINYUSB', 'CFG_TUSB_MCU=OPT_MCU_PIC32MZ' ], 
         CPPPATH    = [ SRC_DIR ]  
     )
 
     mode = 'DEVICE'
     if 'HOST' in params.upper():    
-        filter =  [ '+<*>', '-<device>', '+<class>' ]
+        filter =  [ '+<*>', '-<device>' ]
         mode = 'HOST'
     else:       
-        filter = [ '+<*>', '-<host>', '+<class>' ]
+        filter = [ '+<*>', '-<host>' ]
 
     if 'SRC' in params.upper(): 
         env.BuildSources( OBJ_DIR, SRC_DIR, src_filter = filter )   
