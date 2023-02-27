@@ -486,6 +486,7 @@ class GEN4:
         if self.USB.tool == 'SNAP':
             self.setPowerInfo(0,0,0)
             self.shutDownPowerSystem()
+        self.closeRelay(1)
         INFO('Elapsed %d seconds\n' % ( ( time.time() - self.start_time ) ) )
 
     def stream(self, bin):
